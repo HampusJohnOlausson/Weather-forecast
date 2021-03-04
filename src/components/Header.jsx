@@ -7,7 +7,7 @@ export default class Header extends Component {
           <header className="header">
             <form>
               <div className="search-container">
-                <input placeholder="search location..." className="input" />
+                <input placeholder="Search location..." className="input" />
                 <button className="search-btn"></button>
               </div>
             </form>
