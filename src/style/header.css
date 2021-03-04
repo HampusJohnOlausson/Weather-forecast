@@ -2,16 +2,21 @@
     width: 100%;
     min-height: 20vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    justify-content: space-around;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+.title{
+      font-size: 3rem;
+      margin: 2rem;
 }
 
 .search-container{
     width: 25rem;
     background-color: #ffffff;
     padding: 0.5rem;
-    margin: 2rem auto;
     display: flex;
     border-radius: 1rem;
     box-shadow: 4px 4px 10px 1px rgba(0, 0, 0, 0.2);

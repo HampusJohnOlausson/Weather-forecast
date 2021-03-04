@@ -1,27 +1,25 @@
 import React from 'react'
+import '../style/main.css';
 
 const Main = (props) => {
-
 
      const { location, description, temperature,  region , country , icon } = props.weatherData;
 
     return (
-      <main>
-        <div className="region-container">
-          <h3>{location}</h3>
-          <h5>{region}, {country}</h5>
-        </div>
-        <div className="icon-container">
-            <img src={icon} alt="weather-icon"/>
-        </div>
-        <div className="temperature-container">
-          <h1>
+      <main className="main-container">
+        <div className="info-container">
+          <img className="icon" src={icon} alt="weather-icon" />
+          <h4 className="description">{description}</h4>
+          <h2 className="degrees">
             {temperature}
-            <sup>o</sup>C
-          </h1>
-        </div>
-        <div className="description-container">
-          <h4>{description}</h4>
+            <sup>o</sup> C
+          </h2>
+          <div className="region-container">
+            <h3 className="location">{location}</h3>
+            <h5 className="city">
+              {region}, {country}
+            </h5>
+          </div>
         </div>
       </main>
     );
