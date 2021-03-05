@@ -53,8 +53,7 @@ export default class Layout extends Component {
     this.setState({ inputUser: value })
   }
 
-  changeWeather = (event) => {
-    
+  changeWeather = (event) => { 
     event.preventDefault();
     axios.get(
       `http://api.weatherstack.com/current?access_key=92bce988b9016eae571b967acf532f4c&query=${this.state.inputUser}`

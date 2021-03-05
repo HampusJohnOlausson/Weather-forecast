@@ -8,12 +8,8 @@ const Main = (props) => {
     return (
       <main className="main-container">
         <div className="info-container">
-          
           <h4 className="description">{description}</h4>
-          <h2 className="degrees">
-            {temperature}
-            <sup>o</sup> C
-          </h2>
+          <h2 className="degrees">{temperature}°c</h2>
           <div className="region-container">
             <h3 className="location">{location}</h3>
             <h5 className="city">
