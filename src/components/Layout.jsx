@@ -71,7 +71,7 @@ export default class Layout extends Component {
       this.setState({ data: weatherData });
     }).catch(error => {
        
-       alert('couldnt find the location')
+       alert('Couldnt find the location!')
     })
   }
 
