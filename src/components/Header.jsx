@@ -1,18 +1,26 @@
-import React, { Component } from 'react'
-import "../style/header.css";
+import React from 'react';
+import '../style/header.css';
 
-export default class Header extends Component {
-    render() {
-        return (
-          <header className="header">
-            <h2 className="title">Weather Today?</h2>
-            <form>
-              <div className="search-container">
-                <input placeholder="Search location..." className="input" />
-                <button className="search-btn"></button>
-              </div>
-            </form>
-          </header>
-        );
-    }
+const Header = (props) => {
+  return (
+    <div>
+      <header className="header">
+        <h2 className="title">Weather Today?</h2>
+        <form onSubmit={(e) => props.changeWeather(e)}>
+          <div className="search-container">
+            
+              <input
+                placeholder="Search location..."
+                className="input"
+                onChange={(e) => props.changeLocation(e.target.value)}
+              />
+            <button className="search-btn"></button>
+          </div>
+        </form>
+      </header>
+    </div>
+  );
 }
+
+export default Header
+

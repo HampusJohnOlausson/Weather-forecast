@@ -10,6 +10,7 @@ export default class Layout extends Component {
       longitude: 60,
     },
     data: {},
+    inputUser: ''
   };
 
   componentDidMount() {
@@ -44,14 +45,44 @@ export default class Layout extends Component {
           });
       });
     } else {
-      console.log("Not supported");
+      console.log("Your device is not supported by navigator geolocation!");
     }
   }
+
+  changeLocation = (value) => {
+    this.setState({ inputUser: value })
+  }
+
+  changeWeather = (event) => {
+    
+    event.preventDefault();
+    axios.get(
+      `http://api.weatherstack.com/current?access_key=92bce988b9016eae571b967acf532f4c&query=${this.state.inputUser}`
+    ).then(res => {
+      let weatherData = {
+        location: res.data.location.name,
+        temperature: res.data.current.temperature,
+        description: res.data.current.weather_descriptions[0],
+        region: res.data.location.region,
+        country: res.data.location.country,
+        icon: res.data.current.weather_icons,
+      };
+
+      this.setState({ data: weatherData });
+    }).catch(error => {
+       
+       alert('couldnt find the location')
+    })
+  }
+
   render() {
     return (
       <>
-        <Header />
-        <Main weatherData={this.state.data} />
+        <Header 
+        changeWeather={this.changeWeather}
+        changeLocation={this.changeLocation} />
+        <Main 
+        weatherData={this.state.data} />
       </>
     );
   }

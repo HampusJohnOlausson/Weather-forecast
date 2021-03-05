@@ -3,12 +3,12 @@ import '../style/main.css';
 
 const Main = (props) => {
 
-     const { location, description, temperature,  region , country , icon } = props.weatherData;
+     const { location, description, temperature,  region , country  } = props.weatherData;
 
     return (
       <main className="main-container">
         <div className="info-container">
-          <img className="icon" src={icon} alt="weather-icon" />
+          
           <h4 className="description">{description}</h4>
           <h2 className="degrees">
             {temperature}
