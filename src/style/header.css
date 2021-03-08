@@ -16,7 +16,7 @@
 .search-container{
     background: white;
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7),rgba(255, 255, 255, 0.3));
-    width: 25rem;
+    width: 100%;
     padding: 0.5rem;
     display: flex;
     border-radius: 1rem;
@@ -57,4 +57,12 @@
 }
 .search-btn:hover {
      background: #0083B0;
+}
+@media screen and (max-width: 630px){
+      
+.title{
+      font-size: 2rem;
+      margin: 1rem;
+      margin-top: 4rem;
+}
 }
