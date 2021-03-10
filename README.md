@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# Weather Forecast
+
+Built with React js and Sass.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
