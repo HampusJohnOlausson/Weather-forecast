@@ -47,7 +47,8 @@
   padding: 1rem;
   outline: none;
   font-size: 1.4rem;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .header .search-container .search-btn {
@@ -68,25 +69,25 @@
 .header .input::-webkit-input-placeholder {
   font-size: 1.4rem;
   color: #ffffff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .header .input:-ms-input-placeholder {
   font-size: 1.4rem;
   color: #ffffff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .header .input::-ms-input-placeholder {
   font-size: 1.4rem;
   color: #ffffff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .header .input::placeholder {
   font-size: 1.4rem;
   color: #ffffff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .header .fa-search-location {

@@ -2,6 +2,9 @@
 
 Built with React js and Sass.
 
+View Demo:
+https://hampusjohnolausson.github.io/weather-forecast/
+
 ## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

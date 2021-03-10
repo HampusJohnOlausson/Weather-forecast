@@ -30,7 +30,8 @@
                    padding: 1rem;
                   outline: none;
                   font-size: 1.4rem;
-                  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+                  color: #fff;
+                  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
             }
             .search-btn{
             width: 4.5rem;
@@ -50,7 +51,7 @@
       .input::placeholder {
       font-size: 1.4rem;
       color: #ffffff;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
       }
       .fa-search-location{
       color: #ffffff;
