@@ -11,3 +11,10 @@ body{
   background: linear-gradient(to bottom, #0083B0, #00B4DB);
   color: #ffff;
 }
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}

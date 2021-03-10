@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import Header from './Header'
- import Main from './Main'
+import Main from './Main'
 import axios from "axios";
+import '../App.scss';
 
 export default class Layout extends Component {
   state = {
@@ -76,13 +77,14 @@ export default class Layout extends Component {
 
   render() {
     return (
-      <>
+      <div className="wrapper"> 
         <Header 
         changeWeather={this.changeWeather}
         changeLocation={this.changeLocation} />
         <Main 
         weatherData={this.state.data} />
-      </>
+      </div>
     );
   }
 }
+
