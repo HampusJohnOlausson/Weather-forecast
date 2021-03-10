@@ -5,7 +5,7 @@ const Header = (props) => {
   return (
     <div>
       <header className="header">
-        <h2 className="title">Weather Today?</h2>
+        <h2 className="title">Today's Weather</h2>
         <form onSubmit={(e) => props.changeWeather(e)}>
           <div className="search-container">
             <input
