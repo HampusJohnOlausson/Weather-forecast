@@ -57,7 +57,7 @@ export default class Layout extends Component {
   changeWeather = (event) => { 
     event.preventDefault();
     axios.get(
-      `http://api.weatherstack.com/current?access_key=92bce988b9016eae571b967acf532f4c&query=${this.state.inputUser}`
+      `https://api.weatherstack.com/current?access_key=92bce988b9016eae571b967acf532f4c&query=${this.state.inputUser}`
     ).then(res => {
       let weatherData = {
         location: res.data.location.name,
