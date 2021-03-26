@@ -68,24 +68,28 @@
 
 .header .input::-webkit-input-placeholder {
   font-size: 1.4rem;
+  font-weight: 200;
   color: #ffffff;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .header .input:-ms-input-placeholder {
   font-size: 1.4rem;
+  font-weight: 200;
   color: #ffffff;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .header .input::-ms-input-placeholder {
   font-size: 1.4rem;
+  font-weight: 200;
   color: #ffffff;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .header .input::placeholder {
   font-size: 1.4rem;
+  font-weight: 200;
   color: #ffffff;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }

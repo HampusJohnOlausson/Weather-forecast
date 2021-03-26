@@ -5,14 +5,20 @@ import axios from "axios";
 import '../App.scss';
 
 export default class Layout extends Component {
-  state = {
-    coords: {
-      latitude: 45,
-      longitude: 60,
-    },
-    data: {},
-    inputUser: ''
-  };
+
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+      coords: {
+        latitude: 45,
+        longitude: 60,
+      },
+      data: {},
+      inputUser: '',
+      error: '',
+    };
+  }
 
   componentDidMount() {
     // get device current location
@@ -26,8 +32,7 @@ export default class Layout extends Component {
         this.setState({ coords: newCoords });
 
         //Api
-        axios
-          .get(
+        axios.get(
             `http://api.weatherstack.com/current?access_key=92bce988b9016eae571b967acf532f4c&query=
           ${this.state.coords.latitude},
           ${this.state.coords.longitude}`
@@ -43,7 +48,10 @@ export default class Layout extends Component {
             };
 
             this.setState({ data: weatherData });
-          });
+          }).catch(error => {
+            this.setState({error: 'Error retreiving data'})
+            
+          })
       });
     } else {
       console.log("Your device is not supported by navigator geolocation!");
@@ -56,6 +64,8 @@ export default class Layout extends Component {
 
   changeWeather = (event) => { 
     event.preventDefault();
+    
+
     axios.get(
       `http://api.weatherstack.com/current?access_key=92bce988b9016eae571b967acf532f4c&query=${this.state.inputUser}`
     ).then(res => {
@@ -66,6 +76,7 @@ export default class Layout extends Component {
         region: res.data.location.region,
         country: res.data.location.country,
         icon: res.data.current.weather_icons,
+
       };
 
       this.setState({ data: weatherData });
