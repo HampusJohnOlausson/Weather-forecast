@@ -1,7 +1,7 @@
 import React from 'react'
 import '../Sass/main.scss';
 
-const Main = (props) => {
+const Main = props => {
 
      const { location, description, temperature,  region , country  } = props.weatherData;
 

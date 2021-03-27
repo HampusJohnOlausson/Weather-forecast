@@ -15,8 +15,8 @@ export default class Layout extends Component {
         longitude: 60,
       },
       data: {},
-      inputUser: '',
-      error: '',
+      searchInput: '',
+      error: {}
     };
   }
 
@@ -31,7 +31,7 @@ export default class Layout extends Component {
 
         this.setState({ coords: newCoords });
 
-        //Api
+        //api call to get weather details of current position
         axios.get(
             `http://api.weatherstack.com/current?access_key=92bce988b9016eae571b967acf532f4c&query=
           ${this.state.coords.latitude},
@@ -48,27 +48,29 @@ export default class Layout extends Component {
             };
 
             this.setState({ data: weatherData });
-          }).catch(error => {
+
+          })
+          .catch(err => {
             this.setState({error: 'Error retreiving data'})
-            
           })
       });
+
     } else {
       console.log("Your device is not supported by navigator geolocation!");
     }
   }
 
   changeLocation = (value) => {
-    this.setState({ inputUser: value })
+    this.setState({ searchInput: value })
   }
 
-  changeWeather = (event) => { 
-    event.preventDefault();
+  changeWeatherDetails = (e) => { 
+    e.preventDefault();
     
+    //api call to get weather details for requested location
+    axios.get(`http://api.weatherstack.com/current?access_key=92bce988b9016eae571b967acf532f4c&query=${this.state.searchInput}`)
+    .then(res => {
 
-    axios.get(
-      `http://api.weatherstack.com/current?access_key=92bce988b9016eae571b967acf532f4c&query=${this.state.inputUser}`
-    ).then(res => {
       let weatherData = {
         location: res.data.location.name,
         temperature: res.data.current.temperature,
@@ -76,21 +78,23 @@ export default class Layout extends Component {
         region: res.data.location.region,
         country: res.data.location.country,
         icon: res.data.current.weather_icons,
-
       };
 
       this.setState({ data: weatherData });
-    }).catch(error => {
-       
+
+    })
+
+    .catch(err => { 
        alert('Couldnt find the location!')
     })
+
   }
 
   render() {
     return (
       <div className="wrapper"> 
         <Header 
-        changeWeather={this.changeWeather}
+        changeWeather={this.changeWeatherDetails}
         changeLocation={this.changeLocation} />
         <Main 
         weatherData={this.state.data} />
